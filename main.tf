@@ -57,11 +57,7 @@ variable "password" {
 variable "parameter_group_name" {
   type    = string
 }
-/*
-variable "availability_zone" {
-  type    = string
-}
-*/
+
 variable "publicly_accessible" {
   type    = bool
 }
@@ -176,27 +172,27 @@ resource "aws_db_instance" "the_postgresql_instance" {
 # aws_db_instance - OUTPUT
 ##################################################################################
 
-output "identifier" {
+output "aws_db_instance_identifier" {
   description = "Server Name"
   value = aws_db_instance.the_postgresql_instance.identifier
 }
 
-output "db_name" {
+output "aws_db_instance_db_name" {
   description = "DB Name"
   value = aws_db_instance.the_postgresql_instance.db_name
 }
 
-output "vpc_security_group_ids" {
+output "aws_db_instance_vpc_security_group_ids" {
   description = "Security Group"
   value = aws_db_instance.the_postgresql_instance.vpc_security_group_ids
 }
 
-output "db_subnet_group_name" {
+output "aws_db_instance_db_subnet_group_name" {
   description = "Subnet Group"
   value = aws_db_instance.the_postgresql_instance.db_subnet_group_name
 }
 
-output "endpoint" {
+output "aws_db_instance_endpoint" {
   description = "Endpoint"
   value = aws_db_instance.the_postgresql_instance.endpoint
 }
