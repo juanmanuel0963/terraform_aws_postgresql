@@ -143,7 +143,7 @@ data "aws_security_groups" "the_db_security_group" {
 }
 
 //----------Creates the AWS db instance----------
-/*
+
 resource "aws_db_instance" "the_postgresql_instance" {
   identifier              = local.identifier
   storage_type            = var.storage_type
@@ -196,4 +196,3 @@ output "aws_db_instance_endpoint" {
   description = "Endpoint"
   value = aws_db_instance.the_postgresql_instance.endpoint
 }
-*/
