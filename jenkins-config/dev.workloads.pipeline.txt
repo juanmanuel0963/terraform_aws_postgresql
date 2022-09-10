@@ -4,6 +4,7 @@ pipeline {
      environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID_DEV')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY_DEV')
+        GENERIC_PASSWORD      = credentials('GENERIC_PASSWORD')
     }
     
     stages {
@@ -21,9 +22,8 @@ pipeline {
         stage('Terraform action') {
             steps {
                 echo "terraform action from the parameter is --> ${action}"
-                sh ("terraform ${action} --auto-approve");
+                sh ('terraform ${action} --auto-approve -var password=$GENERIC_PASSWORD'); 
             }
-            
         }        
     }
 }
