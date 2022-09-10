@@ -36,5 +36,7 @@ terraform.rc
 
 **/key_pairs/*
 *tfplan*
+*tfvars*
+*.tfvars
 terraform.tfvars
 
